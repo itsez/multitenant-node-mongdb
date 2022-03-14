@@ -1,0 +1,29 @@
+{
+  "name": "multitenant-node-mongdb",
+  "version": "1.0.0",
+  "description": "An example of multitenancy within mongodb where each tenant has their own collection within the database, managed by the root database where user accounts are stored and linked to tenants and permissions within tenants.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon -r esm server.js ",
+    "start:production": " node -r esm server.js "
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/itsez/multitenant-node-mongdb.git"
+  },
+  "keywords": [
+    "mongodb",
+    "node",
+    "multitenancy"
+  ],
+  "author": "John Hewitt",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/itsez/multitenant-node-mongdb/issues"
+  },
+  "homepage": "https://github.com/itsez/multitenant-node-mongdb#readme",
+  "dependencies": {
+    "express": "^4.17.3"
+  }
+}
