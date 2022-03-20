@@ -1,9 +1,8 @@
-const express = require("express");
 const { getConnection } = require("../util/connection");
-const router = express.Router();
+const router = require("express").Router();
 
 //controllers
-import UserController from "./controllers/user.js";
+import UserController from "../controllers/user.js";
 
 const User = new UserController();
 

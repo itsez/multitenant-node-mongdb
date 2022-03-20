@@ -90,15 +90,10 @@ export default class UserController {
 
     const User = await req.body.db.model("User");
 
-    let user = new User();
-    user.firstName = firstName;
-    user.lastName = lastName;
-    user.email = email;
-
     bcrypt.hash(password, 10, (err, hash) => {
       if (err) return { error: "Error setting password", status: 500 };
       else {
-        user.password = hash;
+        let user = new User({ firstName, lastName, email, password: hash });
         user.save((err, newUser) => {
           if (err) return { error: "Error saving user", status: 500 };
           else {

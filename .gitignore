@@ -5,6 +5,9 @@ package-lock.json
 *.log
 *.gz
 
+#environment configs
+.env
+
 # Coveralls
 .nyc_output
 coverage

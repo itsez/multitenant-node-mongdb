@@ -9,6 +9,7 @@ export const UserSchema = new Schema(
     firstName: String,
     lastName: String,
     code: String, //for password resets and verification
+    admin: { type: Boolean, default: false },
     accounts: [{ type: Schema.Types.ObjectId, ref: "Account" }],
     permissions: { type: Map, default: {} },
   },

@@ -1,9 +1,6 @@
-const express = require("express");
-const { getConnection } = require("../util/connection");
-const router = express.Router();
-
+const router = require("express").Router();
 //controllers
-import UserController from "./controllers/user.js";
+import UserController from "../controllers/user.js";
 
 const User = new UserController();
 
@@ -33,25 +30,25 @@ router.get("/users", async (req, res) => {
   else return res.send(data);
 });
 // define the about route
-router.get("/user", (req, res) => {
+router.get("/user", async (req, res) => {
   let data = await User.get(req);
   if (data.error) return res.status(error.status).send(data.error);
   else return res.send(data);
 });
 
-router.get("/user/current", (req, res) => {
+router.get("/user/current", async (req, res) => {
   let data = await User.get(req);
   if (data.error) return res.status(error.status).send(data.error);
   else return res.send(data);
 });
 
-router.post("/user", (req, res) => {
+router.post("/user", async (req, res) => {
   let data = await User.create(req);
   if (data.error) return res.status(error.status).send(data.error);
   else return res.send(data);
 });
 
-router.put("/user", (req, res) => {
+router.put("/user", async (req, res) => {
   let data = await User.update(req);
   if (data.error) return res.status(error.status).send(data.error);
   else return res.send(data);
